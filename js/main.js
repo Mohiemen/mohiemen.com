@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Mark active nav link based on current file name
   var path = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(function (a) {
     var href = a.getAttribute('href');
@@ -17,9 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Simple client-side filter for the projects register
+  // Project register filter
   var chips = document.querySelectorAll('.chip');
-  var rows = document.querySelectorAll('.reg-row[data-tags]');
+  var rows = document.querySelectorAll('.proj-row[data-tags]');
   if (chips.length && rows.length) {
     chips.forEach(function (chip) {
       chip.addEventListener('click', function () {
@@ -34,6 +33,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Click-to-copy email
+  document.querySelectorAll('.copy-email').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var email = el.getAttribute('data-email') || el.textContent.trim();
+      navigator.clipboard.writeText(email).then(function () {
+        var fb = el.parentElement.querySelector('.copy-feedback');
+        if (fb) {
+          fb.classList.add('show');
+          setTimeout(function () { fb.classList.remove('show'); }, 1600);
+        }
+      });
+    });
+  });
+
   // Contact form: mailto fallback (static site, no backend)
   var form = document.getElementById('contact-form');
   if (form) {
@@ -44,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var message = document.getElementById('cf-message').value.trim();
       var subject = encodeURIComponent('Website inquiry from ' + (name || 'website visitor'));
       var body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
-      window.location.href = 'mailto:tanim@textiletoday.com.bd?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:hi@mohiemen.com?subject=' + subject + '&body=' + body;
     });
   }
 });
