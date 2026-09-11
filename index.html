@@ -115,6 +115,61 @@
     </div>
   </div>
 
+
+</main>
+
+<section class="band">
+  <div class="wrap">
+    <h2>I cannot publish my clients' numbers. Here is the arithmetic instead.</h2>
+    <p class="sub">Every consulting figure I hold belongs to the mill that paid for it. So rather than ask you to trust a case study, put your own lot in. This is the same dyehouse arithmetic I have used on site for eleven years, and the same maths that runs inside Intelactory.</p>
+
+    <div class="calc">
+      <div>
+        <div class="ctrl">
+          <label for="kg">Fabric per lot <b><span id="kg-v">300</span> kg</b></label>
+          <input type="range" id="kg" min="50" max="2000" step="50" value="300">
+        </div>
+        <div class="ctrl">
+          <label for="lr">Machine liquor ratio <b>1 : <span id="lr-v">8</span></b></label>
+          <input type="range" id="lr" min="3" max="15" step="0.5" value="8">
+        </div>
+        <div class="ctrl">
+          <label for="lots">Lots per day <b><span id="lots-v">6</span></b></label>
+          <input type="range" id="lots" min="1" max="30" step="1" value="6">
+        </div>
+      </div>
+
+      <div class="readout" aria-live="polite">
+        <span class="cap">Water drawn per lot</span>
+        <span class="big"><span id="out-lot">2,400</span><span class="big-unit">litres</span></span>
+
+        <div class="bars">
+          <div class="bar-row">
+            <span class="k">At 1 : <span id="lr-a">8</span></span>
+            <span class="bar-track"><span class="bar-fill" id="bar-now" style="width:53%"></span></span>
+            <span class="v"><span id="v-now">2,400</span> L</span>
+          </div>
+          <div class="bar-row">
+            <span class="k">At 1 : 5</span>
+            <span class="bar-track"><span class="bar-fill alt" id="bar-ref" style="width:33%"></span></span>
+            <span class="v"><span id="v-ref">1,500</span> L</span>
+          </div>
+          <div class="bar-row total">
+            <span class="k">Per year</span>
+            <span class="k tot-note">at this ratio, all lots</span>
+            <span class="v"><span id="v-yr">4,205</span> m&sup3;</span>
+          </div>
+        </div>
+
+        <p class="note" id="verdict">Water per lot is fabric weight multiplied by the liquor ratio. Nothing more. Dropping a 300 kg lot from 1:8 to 1:5 takes 900 litres out of every batch, and the heat that went with it.</p>
+      </div>
+    </div>
+
+    <p class="note">Formula: water (L) = fabric (kg) &times; liquor ratio. Annual figure assumes 292 working days. Check it against your own utility meter, not against me.</p>
+  </div>
+</section>
+
+<main>
   <div class="wrap">
     <div class="dim"><h2>Why I am building Intelactory</h2></div>
     <div class="railed">
